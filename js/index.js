@@ -62,9 +62,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-// FOCUS
+// FOCUS // the background for the first input changes, but the following aren't styled
+const focus = document.querySelector('input');
+focus.addEventListener('focus', function() {
+    event.target.style.background = 'pink';
+}, true)
 
 // RESIZE
+const widthOutput = document.querySelector('h2');
+
+function reportWindowSize() {
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
 
 // SCROLL
 
