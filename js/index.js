@@ -82,3 +82,7 @@ window.onresize = reportWindowSize;
 // SELECT
 
 // DBLCLICK
+const DBLClick = document.querySelector('.img-content');
+DBLClick.addEventListener('dblclick', function(event) {
+    event.target.style.transform = 'scale(1.3)';
+})
