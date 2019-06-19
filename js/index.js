@@ -100,7 +100,14 @@ window.addEventListener('scroll', function(e) {
 });
 
 // SELECT
-  
+
+let selectIt = document.querySelector("input")
+
+selectIt.addEventListener('select', function() {
+    console.log('you selected some text.... cool.')
+})
+
+
 // DBLCLICK
 const DBLClick = document.querySelector('.img-content');
 DBLClick.addEventListener('dblclick', function(event) {
