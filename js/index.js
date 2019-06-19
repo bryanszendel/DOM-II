@@ -77,10 +77,30 @@ function reportWindowSize() {
 
 window.onresize = reportWindowSize;
 
+
 // SCROLL
+let last_known_scroll_position = 0;
+let ticking = false;
+
+function doSomething(scroll_pos) {
+  console.log('HELLOOOOOOOOO')
+}
+
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
 
 // SELECT
-
+  
 // DBLCLICK
 const DBLClick = document.querySelector('.img-content');
 DBLClick.addEventListener('dblclick', function(event) {
