@@ -37,6 +37,23 @@ function zoom(event) {
   
 
 // DRAG / DROP
+var dragged = document.querySelector('div.img-content')
+dragged.addEventListener("drag", function(event) {
+    console.log('its being dragged!')
+}, false);
+
+let droppings = document.querySelector('.inverse-content .img-content .img-fluid')
+
+droppings.addEventListener("drop", function(event) {
+  // prevent default action (open as link for some elements)
+  event.preventDefault();
+  // move dragged elem to the selected drop target
+  if (event.target.className === droppings) {
+    // event.target.style.background = "";
+    dragged.parentNode.removeChild( dragged );
+    event.target.appendChild( dragged );
+  }
+}, false);
 
 // LOAD
 const loadLog = document.querySelector('footer p');
