@@ -138,3 +138,16 @@ navDefault.addEventListener('click', function(event) {
     event.preventDefault();
     console.log('things are bing prevented :)')
 })
+
+// NESTED EVENTS WITH stopPropogation()
+const divvy1 = document.querySelector('.content-destination');
+divvy1.addEventListener('dblclick', function(event) {
+    alert("You're hitting the bigger element");
+    event.stopPropagation();
+  
+  const divvy2 = document.querySelector('.content-destination img');
+  divvy2.addEventListener('dblclick', function(event) {
+    alert("DIV 2");
+    event.stopPropagation();
+  })
+});
