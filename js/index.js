@@ -130,3 +130,11 @@ const DBLClick = document.querySelector('.img-content');
 DBLClick.addEventListener('dblclick', function(event) {
     event.target.style.transform = 'scale(1.3)';
 })
+
+
+// PREVENT DEFAULT on NAVIGATION
+let navDefault = document.querySelector('nav');
+navDefault.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log('things are bing prevented :)')
+})
